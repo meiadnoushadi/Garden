@@ -1,32 +1,165 @@
-موجودیت ها:
-کاربران(مدیران و پرسنل و بازدیدکنندگان)
-مکان ها
-مقاله
-کارگاه
-گالری
-خاطره
-نویسنده
+mojodiyat:
+    karbaran
+    makan
+    maghale
+    kargah
+    galory
+    khatrat
+    nevisande
 ========================================
-مدل نوع فایل:
-کد نوع
-عنوان نوع
-پسوند مجاز
+model noee file:
+    code noee
+    title onvan
+    pasvand mojaz
 ========================================
-برای کاربران از مدل گروه کاربران و کاربران جنگو استفاده می کنیم***
-انواع کاربران:
-    مدیر اصلی :
-        مدیریت پرسنل و کاربران عادی-دسترسی به تمام بخش ها
-    پرسنل :
-        مدیریت مقالات -مدیریت کارگاه ها-مدیریت خاطرات
-    کاربرعادی :
-        ثبت نام و ورود-ثبت خاطره
+*** baray karbaran az model group karbaran and karbaran django estefade mikonim
+anvaee karbaran:
+    1-moder asli:
+        manage persenel va karbaran adie
+        dastresi be tamame bakhshha
+    2-persenel:
+        manage maghalat
+        manage kargahha
+        manage khatrat
+    3-karbaran adie:
+        sgin in/login
+        sabte khatrat
 ========================================
-اپلکیشن ها:
-اپلکیشن اصلی
-اپلکیشن مکان ها
-اپلکیشن کاربران
-اپلکیشن مقالات
-اپلکیشن خاطرات
-اپلکیشن کارگاه
-اپلکیشن گالری
-اپلکیشن جستجو
+applications:
+    main        !!
+    makan       **
+    karbaran    !!
+    maghalat    **
+    khatrat     **
+    kargah      **
+    galory      **
+    search      **
+========================================
+application makan:
+    model makan:
+        code makan
+        title makan
+        tozihat
+        image main
+        roze bazdid
+        saat bazdid
+        gavanin va moghar'rat
+
+    model bazdid konande:
+        code noee bazdid konande
+        name noee bazdid konande
+            1 general
+            2 group
+            3 daneshjo
+            4 khareji
+    model ticket:
+        code ticket
+        code noee bazdid konande (key-khareji)
+        code makan (key-khareji)
+        price be ezaee har fard
+========================================
+application khatrat:
+    model khatre:
+        code
+        date
+        date sabt
+        text main
+        image main
+        code karbar (key-khareji)
+
+    galory khatre image:
+        code 
+        name
+        code khatre (key-khareji)
+        status
+========================================
+application kargah:
+    
+    status kargah:
+        code
+        title
+            1 laghv shode
+            2 dar hale barghzari
+            3 barghzar shode
+    
+    model kargah:
+        code
+        title
+        name va family modares
+        date and time start
+        date sabt
+        status (key-khareji)
+        tozihat
+        makan bargozari
+        text gozaresh kargah(dar start empty)
+        tedade bazdid
+
+    model galory image kargah:
+        code
+        name
+        code kargah(key-khareji)
+
+    model modares:
+        code
+        name
+        family
+        mobile
+        address
+        takhasos
+========================================
+application maghalat:
+    model nevisande
+        code nevisande
+        name nevisande
+        family nevisande
+        email nevisande
+        mobile number nevisande
+        status active/deactive
+
+    model group maghalat
+        code group maghale
+        name group maghale
+            1 pazhoheshi
+            2 elmi
+            3 Amozeshi
+
+    model maghale
+        code maghale
+        code group maghalat(key-khareji)
+        title maghale
+        image main
+        code nevisande (key-khareji)
+        summry maghale
+        text main maghale
+        tag words
+        date sabt maghale
+        date edit maghale
+        date publish maghale
+        status maghale
+        name file pdf
+        tedade bazdid
+        manabe
+    
+    galory image maghale:
+        code image
+        name image
+        code maghale(key-khareji)
+
+    model emtiyaz be maghale:
+        code emtiyaz
+        code maghale (key-khareji)
+        code karbar(key-khareji)
+        meghdar emtiyaz (1 ta 5)
+========================================
+application galory makan:
+    model galory:
+        code
+        date 
+        code makan
+        name image
+        text title
+        code valied(key-khareji)
+
+========================================
+application search:
+    
