@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'partials/cssBootstrap.html' %}
+    <link rel="stylesheet" href="{% static 'css/partials/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/partials/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/partials/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/partials/slider.css' %}">
+
+    {% block style %}
+        استایل های هر صفحه
+    {% endblock style %}
+
+    <title>
+        باغ فردوس |
+        {% block title %}
+            نوشتن عنوان
+        {% endblock title %}
+    </title>
+
+</head>
+<body class="rtl">
+
+    {% include 'partials/header.html' %}
+    {% include 'partials/navbar.html' %}
+    {% include 'partials/slider.html' %}
+
+    {% block content %}
+    محتوای صفحه
+    {% endblock content %}
+    
+
+    {% include 'partials/footer.html' %}
+    {% include 'partials/scriptsBoostrap.html' %}
+
+</body>
+</html>
