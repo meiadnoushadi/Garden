@@ -1,0 +1,12 @@
+.header{
+    height: 15%vh;
+    box-sizing: border-box;
+}
+.header img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgb(148, 150, 151);
+    display: inline-block;
+    margin: 3px;
+}
